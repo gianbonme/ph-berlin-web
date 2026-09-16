@@ -1,0 +1,396 @@
+<!doctype html>
+<html lang="es-AR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PH Berlín — Parque Chas</title>
+<meta name="description" content="PH en venta en Parque Chas, Buenos Aires. Ficha, fotos y contacto directo con el propietario.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#efe9dd;
+    --paper-raise:#e6dfcf;
+    --ink:#23241f;
+    --ink-soft:#5b5b4f;
+    --pine:#1e3b34;
+    --pine-soft:#2c5148;
+    --brass:#a9793d;
+    --line:#d3c9b3;
+    color-scheme: light;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --paper:#15150f;
+      --paper-raise:#1c1c14;
+      --ink:#efe9dd;
+      --ink-soft:#b7b09a;
+      --pine:#79b3a2;
+      --pine-soft:#5c9384;
+      --brass:#d9a85e;
+      --line:#33321f;
+      color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"]{
+    --paper:#15150f;
+    --paper-raise:#1c1c14;
+    --ink:#efe9dd;
+    --ink-soft:#b7b09a;
+    --pine:#79b3a2;
+    --pine-soft:#5c9384;
+    --brass:#d9a85e;
+    --line:#33321f;
+    color-scheme: dark;
+  }
+
+  *{box-sizing:border-box;}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:"Archivo",system-ui,sans-serif;
+    line-height:1.55;
+    padding-inline:0;
+  }
+  h1,h2,h3{
+    font-family:"Fraunces",Georgia,serif;
+    font-weight:500;
+    text-wrap:balance;
+    margin:0;
+  }
+  a{color:inherit;}
+  .wrap{max-width:760px;margin-inline:auto;padding-inline:20px;}
+  .eyebrow{
+    font-size:12px;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    color:var(--ink-soft);
+    font-weight:600;
+  }
+
+  /* Nav */
+  nav{
+    position:sticky;top:env(safe-area-inset-top,0px);z-index:10;
+    background:color-mix(in srgb, var(--paper) 88%, transparent);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--line);
+  }
+  nav .row{
+    max-width:760px;margin-inline:auto;padding:14px 20px;
+    display:flex;align-items:center;justify-content:space-between;gap:16px;
+  }
+  .brand{font-family:"Fraunces",serif;font-size:18px;letter-spacing:.02em;}
+  .brand b{color:var(--pine);}
+  .navcta{
+    font-size:13px;font-weight:600;padding:8px 14px;border-radius:2px;
+    background:var(--pine);color:var(--paper);white-space:nowrap;
+    text-decoration:none;
+  }
+
+  /* Hero */
+  .hero{
+    padding-block:56px 40px;
+    border-bottom:1px solid var(--line);
+  }
+  .hero .eyebrow{margin-bottom:14px;}
+  .hero h1{font-size:clamp(32px,6vw,52px);line-height:1.06;}
+  .hero .lede{
+    margin-top:18px;font-size:17px;color:var(--ink-soft);max-width:56ch;
+  }
+  .hero-figure{
+    margin-top:32px;aspect-ratio:16/10;border-radius:2px;
+    overflow:hidden;
+    border:1px solid var(--line);
+  }
+  .hero-figure:has(span){
+    background:
+      repeating-linear-gradient(135deg, var(--paper-raise) 0 2px, transparent 2px 14px),
+      var(--paper-raise);
+    display:flex;align-items:center;justify-content:center;
+    text-align:center;padding:24px;
+  }
+  .hero-figure span{
+    font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft);
+  }
+  .price-pill{
+    display:inline-flex;align-items:baseline;gap:8px;margin-top:24px;
+    padding:10px 16px;border:1px solid var(--brass);border-radius:2px;
+  }
+  .price-pill .amount{font-family:"Fraunces",serif;font-size:22px;color:var(--brass);}
+  .price-pill .cur{font-size:12px;color:var(--ink-soft);letter-spacing:.08em;text-transform:uppercase;}
+
+  /* Story */
+  .story{padding-block:52px;border-bottom:1px solid var(--line);}
+  .story h2{font-size:clamp(24px,4vw,32px);margin-bottom:18px;}
+  .story p{margin:0 0 16px;max-width:62ch;}
+  .story p:last-child{margin-bottom:0;}
+  .story em{color:var(--pine-soft);font-style:normal;font-weight:600;}
+
+  /* Ficha */
+  .ficha{padding-block:52px;border-bottom:1px solid var(--line);}
+  .ficha h2{font-size:clamp(24px,4vw,32px);margin-bottom:28px;}
+
+  .ficha-stats{
+    display:grid;grid-template-columns:repeat(3,1fr);
+    border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+    margin-bottom:36px;
+  }
+  .stat{
+    padding:20px 14px;text-align:center;
+    border-right:1px solid var(--line);
+  }
+  .stat:last-child{border-right:none;}
+  .stat .num{
+    display:block;font-family:"Fraunces",serif;font-size:clamp(26px,5vw,36px);
+    color:var(--brass);font-variant-numeric:tabular-nums;line-height:1;
+  }
+  .stat .unit{
+    display:block;margin-top:8px;font-size:12px;letter-spacing:.04em;color:var(--ink-soft);
+  }
+  @media (max-width:520px){
+    .stat{padding:16px 8px;}
+    .stat .unit{font-size:11px;}
+  }
+
+  .ficha-plantas{
+    display:flex;flex-direction:column;gap:0;
+    border-top:1px solid var(--line);margin-bottom:32px;
+  }
+  .planta{
+    display:grid;grid-template-columns:140px 1fr;gap:16px;
+    padding:16px 0;border-bottom:1px solid var(--line);
+  }
+  .planta-label{
+    font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--pine-soft);font-weight:600;
+    padding-top:2px;
+  }
+  .planta p{margin:0;max-width:52ch;}
+  @media (max-width:520px){
+    .planta{grid-template-columns:1fr;gap:6px;}
+  }
+
+  .ficha-reforma{
+    padding:20px 22px;border:1px solid var(--line);border-radius:2px;
+    background:var(--paper-raise);
+  }
+  .ficha-reforma .tag{
+    display:block;margin-bottom:8px;font-size:12px;letter-spacing:.1em;text-transform:uppercase;
+    color:var(--brass);font-weight:600;
+  }
+  .ficha-reforma p{margin:0;max-width:60ch;color:var(--ink-soft);}
+
+  /* Galería */
+  .galeria{padding-block:52px;border-bottom:1px solid var(--line);}
+  .galeria h2{font-size:clamp(24px,4vw,32px);margin-bottom:8px;}
+  .galeria .eyebrow{margin-bottom:0;order:-1;display:block;margin-bottom:8px;}
+  .grid-fotos{
+    margin-top:28px;display:grid;gap:10px;
+    grid-template-columns:repeat(6,1fr);
+    grid-auto-rows:90px;
+  }
+  .foto{
+    border:1px solid var(--line);border-radius:2px;
+    overflow:hidden;position:relative;
+  }
+  .foto img{width:100%;height:100%;object-fit:cover;display:block;}
+  .foto .cap{
+    position:absolute;left:0;right:0;bottom:0;padding:8px 10px;
+    font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:#efe9dd;
+    background:linear-gradient(to top, rgba(0,0,0,.55), transparent);
+  }
+  .foto.f1{grid-column:span 4;grid-row:span 3;}
+  .foto.f2{grid-column:span 2;grid-row:span 3;}
+  .foto.f3{grid-column:span 2;grid-row:span 2;}
+  .foto.f4{grid-column:span 2;grid-row:span 2;}
+  .foto.f5{grid-column:span 2;grid-row:span 2;}
+  @media (max-width:560px){
+    .grid-fotos{grid-template-columns:repeat(2,1fr);grid-auto-rows:110px;}
+    .foto.f1{grid-column:span 2;grid-row:span 2;}
+    .foto.f2,.foto.f3,.foto.f4,.foto.f5{grid-column:span 1;grid-row:span 1;}
+  }
+
+  /* Diferenciales */
+  .dif{padding-block:52px;border-bottom:1px solid var(--line);}
+  .dif h2{font-size:clamp(24px,4vw,32px);margin-bottom:28px;}
+  .dif-list{display:grid;gap:20px;grid-template-columns:1fr 1fr;}
+  .dif-item{display:flex;gap:12px;}
+  .dif-item .n{font-family:"Fraunces",serif;color:var(--brass);font-size:15px;min-width:22px;}
+  .dif-item p{margin:0;font-size:15px;color:var(--ink);}
+  @media (max-width:520px){.dif-list{grid-template-columns:1fr;}}
+
+  /* Recorrido completo */
+  .recorrido{padding-block:52px;border-bottom:1px solid var(--line);}
+  .recorrido h2{font-size:clamp(24px,4vw,32px);margin-bottom:8px;}
+  .recorrido .lede-r{color:var(--ink-soft);max-width:56ch;margin:10px 0 28px;}
+  .recorrido-grid{
+    display:grid;grid-template-columns:repeat(4,1fr);gap:1px;
+    background:var(--line);border:1px solid var(--line);
+  }
+  .recorrido-item{background:var(--paper);}
+  .recorrido-item .thumb{aspect-ratio:4/3;overflow:hidden;}
+  .recorrido-item .thumb img{width:100%;height:100%;object-fit:cover;display:block;}
+  .recorrido-item .meta{display:flex;gap:8px;align-items:baseline;padding:9px 10px;}
+  .recorrido-item .idx{font-family:"Fraunces",serif;color:var(--brass);font-size:12px;}
+  .recorrido-item .label{font-size:11.5px;letter-spacing:.02em;color:var(--ink-soft);}
+  @media (max-width:640px){.recorrido-grid{grid-template-columns:repeat(2,1fr);}}
+
+  /* CTA band */
+  .cta{
+    background:var(--pine);color:var(--paper);
+    padding-block:56px;
+  }
+  .cta .wrap{display:block;}
+  .cta h2{font-size:clamp(24px,4vw,32px);color:var(--paper);margin-bottom:6px;}
+  .cta .sub{color:color-mix(in srgb, var(--paper) 70%, transparent);margin-bottom:28px;max-width:52ch;}
+  .btn-email{
+    background:var(--brass);color:#1a1a12;
+    font-weight:700;font-size:15px;padding:14px 22px;border-radius:2px;
+    text-decoration:none;display:inline-flex;align-items:center;gap:8px;
+  }
+
+  footer{padding-block:28px;}
+  footer .wrap{
+    display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;
+    font-size:12.5px;color:var(--ink-soft);
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="row">
+    <div class="brand"><b>PH</b> Berlín · Parque Chas</div>
+    <a class="navcta" href="#contacto">Coordinar visita</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Venta directa · Sin inmobiliaria</div>
+    <h1>¡Casi una casa!<br>Escondido en la trama<br>más única de Buenos Aires.</h1>
+    <p class="lede">PH al fondo de un lote de solo 2 unidades, a la venta en calle Berlín, Parque Chas — el barrio de las calles curvas que ni los taxistas se atreven. Barrio bajo, con pajaritos, sin barullo! Cerca del subte y de las avenidas, a una cuadra de la fuente.</p>
+    <div class="hero-figure"><img src="ph-berlin-fotos/14-patio-balcon.jpg" alt="Patio interno y fachada del PH, con balcón y plantas" style="width:100%;height:100%;object-fit:cover;border-radius:2px;"></div>
+    <div class="price-pill">
+      <span class="cur">Venta</span>
+      <span class="amount">USD 295.000</span>
+    </div>
+  </div>
+</section>
+
+<section class="story">
+  <div class="wrap">
+    <span class="eyebrow">El barrio</span>
+    <h2 style="margin-top:10px;">Un barrio pensado para vivir, no para pasar.</h2>
+    <p>Parque Chas nació en 1925, cuando el rematador genovés Gerónimo Grosso trazó estas calles curvas inspirado en las ciudades-jardín inglesas: más verde, más silencio, mejor aprovechamiento del terreno. El 27 de noviembre de 1927 remató los primeros 200 lotes a 25 pesos, pagaderos en 100 cuotas sin interés — así se armó, familia por familia y fin de semana por fin de semana, el único barrio de Buenos Aires donde <em>no pasa una avenida</em>.</p>
+  </div>
+</section>
+
+<section class="ficha">
+  <div class="wrap">
+    <span class="eyebrow">Ficha técnica</span>
+    <h2 style="margin-top:10px;">Los números</h2>
+
+    <div class="ficha-stats">
+      <div class="stat"><span class="num">±100</span><span class="unit">m2 de terreno</span></div>
+      <div class="stat"><span class="num">&gt;120</span><span class="unit">m2 cubiertos</span></div>
+      <div class="stat"><span class="num">&gt;60</span><span class="unit">m2 descubiertos</span></div>
+    </div>
+
+    <div class="ficha-plantas">
+      <div class="planta">
+        <span class="planta-label">Planta baja</span>
+        <p>Patio. Living - Cocina integrados. Baño completo. Estudio acustizado.</p>
+      </div>
+      <div class="planta">
+        <span class="planta-label">Planta alta</span>
+        <p>Dos habitaciones en suite. Una con Balcón corrido.</p>
+      </div>
+      <div class="planta">
+        <span class="planta-label">Terraza</span>
+        <p>Espacio abierto + Depósito.</p>
+      </div>
+    </div>
+
+    <div class="ficha-reforma">
+      <span class="tag">Reforma integral · 2020</span>
+      <p>Reformada a nuevo en el 2020 incluyendo plomería, electricidad, gas, y calefacción por radiadores (caldera). Incluye una salamandra a leña así como todos los muebles/electrodomésticos fundamentales.</p>
+    </div>
+  </div>
+</section>
+
+<section class="galeria">
+  <div class="wrap">
+    <span class="eyebrow">Galería</span>
+    <h2 style="margin-top:10px;">Cómo se vive adentro</h2>
+    <div class="grid-fotos">
+      <div class="foto f1"><img src="ph-berlin-fotos/03-living-escalera.jpg" alt="Living con escalera de madera y pared de ladrillo a la vista"><span class="cap">Living</span></div>
+      <div class="foto f2"><img src="ph-berlin-fotos/02-cocina.jpg" alt="Cocina con isla y puertas vidriadas al patio"><span class="cap">Cocina</span></div>
+      <div class="foto f3"><img src="ph-berlin-fotos/12-suite1.jpg" alt="Suite principal con balcón corrido"><span class="cap">Suite 1</span></div>
+      <div class="foto f4"><img src="ph-berlin-fotos/15-balcon-terraza.jpg" alt="Terraza con hamaca y plantas"><span class="cap">Terraza</span></div>
+      <div class="foto f5"><img src="ph-berlin-fotos/17-patio2.jpg" alt="Patio con mesa exterior y muro verde de plantas"><span class="cap">Patio</span></div>
+    </div>
+
+    <p style="margin-top:24px;"><a href="#recorrido" style="color:var(--pine-soft);font-weight:600;text-decoration:underline;text-underline-offset:3px;">Ver el recorrido completo, ambiente por ambiente ↓</a></p>
+  </div>
+</section>
+
+<section class="dif">
+  <div class="wrap">
+    <span class="eyebrow">Por qué esta y no otra</span>
+    <h2 style="margin-top:10px;">Diferenciales</h2>
+    <div class="dif-list">
+      <div class="dif-item"><span class="n">01</span><p>Entrada propia, con portero eléctrico y segunda reja por seguridad.</p></div>
+      <div class="dif-item"><span class="n">02</span><p>Amplia y luz natural en todos los ambientes.</p></div>
+      <div class="dif-item"><span class="n">03</span><p>Sin expensas y solamente dos unidades en la propiedad horizontal.</p></div>
+      <div class="dif-item"><span class="n">04</span><p>Patio, balcón y terraza!</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="recorrido" id="recorrido">
+  <div class="wrap" style="max-width:920px;">
+    <span class="eyebrow">Recorrido completo</span>
+    <h2 style="margin-top:10px;">Toda la casa, ambiente por ambiente.</h2>
+    <p class="lede-r">Las 17 fotos, en el mismo orden en que se recorre la propiedad — de la entrada a la terraza.</p>
+    <div class="recorrido-grid">
+      <div class="recorrido-item"><div class="thumb"><img src="ph-berlin-fotos/01-patio.jpg" alt="Patio"></div><div class="meta"><span class="idx">01</span><span class="label">Patio</span></div></div>
+      <div class="recorrido-item"><div class="thumb"><img src="ph-berlin-fotos/02-cocina.jpg" alt="Cocina"></div><div class="meta"><span class="idx">02</span><span class="label">Cocina</span></div></div>
+      <div class="recorrido-item"><div class="thumb"><img src="ph-berlin-fotos/03-living-escalera.jpg" alt="Living y escalera"></div><div class="meta"><span class="idx">03</span><span class="label">Living / Escalera</span></div></div>
+      <div class="recorrido-item"><div class="thumb"><img src="ph-berlin-fotos/04-estudio.jpg" alt="Estudio acustizado"></div><div class="meta"><span class="idx">04</span><span class="label">Estudio</span></div></div>
+      <div class="recorrido-item"><div class="thumb"><img src="ph-berlin-fotos/05-living.jpg" alt="Living"></div><div class="meta"><span class="idx">05</span><span class="label">Living</span></div></div>
+      <div class="recorrido-item"><div class="thumb"><img src="ph-berlin-fotos/06-living-cocina.jpg" alt="Living y cocina integrados"></div><div class="meta"><span class="idx">06</span><span class="label">Living - Cocina</span></div></div>
+      <div class="recorrido-item"><div class="thumb"><img src="ph-berlin-fotos/07-escalera.jpg" alt="Escalera con claraboia"></div><div class="meta"><span class="idx">07</span><span class="label">Escalera</span></div></div>
+      <div class="recorrido-item"><div class="thumb"><img src="ph-berlin-fotos/08-suite2.jpg" alt="Suite 2"></div><div class="meta"><span class="idx">08</span><span class="label">Suite 2</span></div></div>
+      <div class="recorrido-item"><div class="thumb"><img src="ph-berlin-fotos/09-bano-suite2.jpg" alt="Baño de la suite 2"></div><div class="meta"><span class="idx">09</span><span class="label">Baño Suite 2</span></div></div>
+      <div class="recorrido-item"><div class="thumb"><img src="ph-berlin-fotos/10-suite2b.jpg" alt="Suite 2, segundo ángulo"></div><div class="meta"><span class="idx">10</span><span class="label">Suite 2</span></div></div>
+      <div class="recorrido-item"><div class="thumb"><img src="ph-berlin-fotos/11-pasillo-pa.jpg" alt="Pasillo de entrada"></div><div class="meta"><span class="idx">11</span><span class="label">Pasillo</span></div></div>
+      <div class="recorrido-item"><div class="thumb"><img src="ph-berlin-fotos/12-suite1.jpg" alt="Suite principal con balcón corrido"></div><div class="meta"><span class="idx">12</span><span class="label">Suite 1</span></div></div>
+      <div class="recorrido-item"><div class="thumb"><img src="ph-berlin-fotos/13-bano-suite1.jpg" alt="Baño de la suite 1"></div><div class="meta"><span class="idx">13</span><span class="label">Baño Suite 1</span></div></div>
+      <div class="recorrido-item"><div class="thumb"><img src="ph-berlin-fotos/14-patio-balcon.jpg" alt="Patio con balcón"></div><div class="meta"><span class="idx">14</span><span class="label">Patio / Balcón</span></div></div>
+      <div class="recorrido-item"><div class="thumb"><img src="ph-berlin-fotos/15-balcon-terraza.jpg" alt="Balcón hacia la terraza"></div><div class="meta"><span class="idx">15</span><span class="label">Balcón / Terraza</span></div></div>
+      <div class="recorrido-item"><div class="thumb"><img src="ph-berlin-fotos/16-terraza.jpg" alt="Terraza"></div><div class="meta"><span class="idx">16</span><span class="label">Terraza</span></div></div>
+      <div class="recorrido-item"><div class="thumb"><img src="ph-berlin-fotos/17-patio2.jpg" alt="Patio, segundo ángulo"></div><div class="meta"><span class="idx">17</span><span class="label">Patio</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="cta" id="contacto">
+  <div class="wrap">
+    <h2 style="margin-top:10px;">Coordinemos una visita real.</h2>
+    <p class="sub">Vendo directo, sin inmobiliaria — para que el precio quede en la operación, no en la comisión.</p>
+    <a class="btn-email" href="mailto:gtkweb3@gmail.com?subject=PH%20Berl%C3%ADn%20-%20Parque%20Chas">
+      Escribir a gtkweb3@gmail.com →
+    </a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>Parque Chas, Ciudad Autónoma de Buenos Aires</span>
+    <span>Venta directa por el propietario</span>
+  </div>
+</footer>
+
+</body>
+</html>
