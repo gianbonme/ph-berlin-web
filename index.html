@@ -184,6 +184,17 @@
   .galeria{padding-block:52px;border-bottom:1px solid var(--line);}
   .galeria h2{font-size:clamp(24px,4vw,32px);margin-bottom:8px;}
   .galeria .eyebrow{margin-bottom:0;order:-1;display:block;margin-bottom:8px;}
+  .galeria-grid{display:flex;flex-wrap:wrap;gap:10px;align-items:flex-start;justify-content:center;}
+  .galeria-item{
+    border:1px solid var(--line);border-radius:2px;overflow:hidden;background:var(--paper-raise);
+  }
+  .galeria-item .thumb img{height:190px;width:auto;max-width:100%;display:block;}
+  .galeria-item .meta{padding:7px 10px;}
+  .galeria-item .label{font-size:11px;letter-spacing:.02em;color:var(--ink-soft);}
+  @media (max-width:640px){
+    .galeria-item{width:100%;}
+    .galeria-item .thumb img{height:auto;width:100%;}
+  }
 
   /* Diferenciales */
   .dif{padding-block:52px;border-bottom:1px solid var(--line);}
@@ -296,16 +307,16 @@
 </section>
 
 <section class="galeria">
-  <div class="wrap" style="max-width:1180px;">
+  <div class="wrap">
     <span class="eyebrow">Galería</span>
     <h2 style="margin-top:10px;">Cómo se vive adentro</h2>
-    <div class="recorrido-grid" style="margin-top:24px;">
-      <div class="recorrido-item"><div class="thumb"><img src="ph-berlin-fotos/02-cocina.jpg" alt="Cocina con isla y puertas vidriadas al patio"></div><div class="meta"><span class="label">Cocina</span></div></div>
-      <div class="recorrido-item"><div class="thumb"><img src="ph-berlin-fotos/05-living.jpg" alt="Living"></div><div class="meta"><span class="label">Living</span></div></div>
-      <div class="recorrido-item"><div class="thumb"><img src="ph-berlin-fotos/08-suite2.jpg" alt="Suite 2"></div><div class="meta"><span class="label">Suite 2</span></div></div>
-      <div class="recorrido-item"><div class="thumb"><img src="ph-berlin-fotos/12-suite1.jpg" alt="Suite principal con balcón corrido"></div><div class="meta"><span class="label">Suite 1</span></div></div>
-      <div class="recorrido-item"><div class="thumb"><img src="ph-berlin-fotos/13-bano-suite1.jpg" alt="Baño de la suite 1"></div><div class="meta"><span class="label">Baño Suite 1</span></div></div>
-      <div class="recorrido-item"><div class="thumb"><img src="ph-berlin-fotos/15-balcon-terraza.jpg" alt="Balcón hacia la terraza"></div><div class="meta"><span class="label">Terraza</span></div></div>
+    <div class="galeria-grid" style="margin-top:24px;">
+      <div class="galeria-item"><div class="thumb"><img src="ph-berlin-fotos/02-cocina.jpg" alt="Cocina con isla y puertas vidriadas al patio"></div><div class="meta"><span class="label">Cocina</span></div></div>
+      <div class="galeria-item"><div class="thumb"><img src="ph-berlin-fotos/05-living.jpg" alt="Living"></div><div class="meta"><span class="label">Living</span></div></div>
+      <div class="galeria-item"><div class="thumb"><img src="ph-berlin-fotos/08-suite2.jpg" alt="Suite 2"></div><div class="meta"><span class="label">Suite 2</span></div></div>
+      <div class="galeria-item"><div class="thumb"><img src="ph-berlin-fotos/12-suite1.jpg" alt="Suite principal con balcón corrido"></div><div class="meta"><span class="label">Suite 1</span></div></div>
+      <div class="galeria-item"><div class="thumb"><img src="ph-berlin-fotos/13-bano-suite1.jpg" alt="Baño de la suite 1"></div><div class="meta"><span class="label">Baño Suite 1</span></div></div>
+      <div class="galeria-item"><div class="thumb"><img src="ph-berlin-fotos/15-balcon-terraza.jpg" alt="Balcón hacia la terraza"></div><div class="meta"><span class="label">Terraza</span></div></div>
     </div>
 
     <p style="margin-top:24px;"><a href="#recorrido" style="color:var(--pine-soft);font-weight:600;text-decoration:underline;text-underline-offset:3px;">Ver el recorrido completo, ambiente por ambiente ↓</a></p>
